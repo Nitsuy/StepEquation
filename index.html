@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script type = "text/javascript" src="index.js"></script>  -->
+    <script>
+      function sumCheckedValues() {
+        var sum = 0;
+        var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+    
+        for (var i = 0; i < checkboxes.length; i++) {
+          sum += parseInt(checkboxes[i].value);
+        }
+    
+        return sum;
+      }
+      
+      window.addEventListener('load', function() {
+        var checkboxes = document.querySelectorAll('input[type=checkbox]');
+        
+        for (var i = 0; i < checkboxes.length; i++) {
+          checkboxes[i].addEventListener('change', function() {
+            var sum = sumCheckedValues();
+            document.getElementById('total').textContent = sum;
+          });
+        }
+      });
+    </script>
+    <title>Proyecto de Yustin</title>
+</head>
+<body>
+   <div>
+         <h1> STEP EQUATION <br>DIY</h1>
+         <h2> CAN A TERRITORY SUSTAINABLY ACHIEVE SELF-GOVERNANCE? <br>
+          S+T+E+P= SELF - GOVERNING TERRITORY </h2>
+</div>
+
+    <div class="contenedor">
+
+       <div class=" div1">
+           <p class="subtitulo"> (S) Sovereignty - (T) Terrority - (E) Economic Autonomy - (P) Political organization</p>
+           
+
+            <!-- List Checkbox's-->
+
+       <div class="div2">
+           <h3>1. (S) Sovereignty </h3>
+           
+           <p><label for= "info"> a. Internally. </label>
+           <input type="checkbox" onclick="sumCheckedValues()" name="info" id="info" value="1"></p>
+
+           <p><label for= "info"> b. Externally. </label>
+           <input type="checkbox" onclick="sumCheckedValues()" name="info" id="info" value="1"></p>
+
+           <!-- Checkbox 1 -->
+
+           <h3>2. (T) Territory and Population.</h3>
+
+           <p><label for="info"> a. Existence of territory.</label> 
+           <input type="checkbox" onclick="sumCheckedValues()" name="info" id="info" value="1"></p>
+
+           <p> <label for="info">b. Existence of permanent population.</label>
+           <input type="checkbox" onclick="sumCheckedValues()" name="info" id="info" value="1"></p>
+
+           <!-- Checkbox 2-->
+  
+           <h3>3. (E) Economic autonomy from the Administering Power.</h3>
+
+           <p> <label for="info">a. Commercial exchange with other states.</label>
+           <input type="checkbox" onclick="sumCheckedValues()" name="info" id="info" value="1"></p>
+
+           <p>  <label for="info">b. Possibility to fullfil citizens' needs </label>
+           <input type="checkbox" onclick="sumCheckedValues()" name="info" id="info" value="1"></p>
+
+           <!-- Checkbox 3-->
+  
+           <h3>4. (P) Political organization</h3>
+
+           <p> <label for="info"> a. The existence of a Constitution.</label>
+           <input type="checkbox" onclick="sumCheckedValues()" name="info" id="info" value="1"></p>
+
+           <p> <label for="info">b. The existenceof separated braches of government</label>
+            <input type="checkbox" onclick="sumCheckedValues()" name="info" id="info" value="1"></p>
+
+           <!-- Checkbox 4-->
+        </div>
+      </div>
+    
+    <hr class="Lineavertical">
+       <div class="div3">
+           <h3> S = </h3>
+           <h3> T = </h3>
+           <h3> E = </h3>
+           <h3> P = </h3><hr class="lineahorizontal">
+           
+      <div class="result"><br>
+            <h3> Result = <span id="total"></span></h3>  
+      </div> 
+
+      <div class=" div4">
+         <p> Resulting in:</p>
+         <p> 8: Fully able to sustainably achieve Self-governance</p>
+         <p> 4-7: on process towards being capableto achieve self-governance</p>
+         <p> 1-3: unable to sustainably become independent</p>
+      </div>
+   </div> 
+</div>
+
+
+
+</body>
+</html>
